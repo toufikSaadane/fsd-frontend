@@ -1,0 +1,86 @@
+<!--<div class="container mt-5">-->
+<!--  <div class="row justify-content-center">-->
+<!--    <div class="col-md-6">-->
+<!--      <div class="card">-->
+<!--        <div class="card-header">-->
+<!--          <h3 class="text-center">Login</h3>-->
+<!--        </div>-->
+<!--        <div class="card-body">-->
+<!--          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">-->
+<!--            <div class="mb-3">-->
+<!--              <label for="username" class="form-label">Gebruikersnaam</label>-->
+<!--              <input type="text" class="form-control" id="username" formControlName="username" required>-->
+<!--              <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="text-danger">-->
+<!--                Gebruikersnaam is verplicht.-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="mb-3">-->
+<!--              <label for="password" class="form-label">Wachtwoord</label>-->
+<!--              <input type="password" class="form-control" id="password" formControlName="password" required>-->
+<!--              <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">-->
+<!--                Wachtwoord is verplicht.-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="d-grid">-->
+<!--              <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid || isSubmitting">-->
+<!--                {{ isSubmitting ? 'Bezig met inloggen...' : 'Inloggen' }}-->
+<!--              </button>-->
+<!--            </div>-->
+<!--          </form>-->
+<!--          <div *ngIf="submitError" class="alert alert-danger mt-3">-->
+<!--            {{ submitError }}-->
+<!--          </div>-->
+<!--          <div *ngIf="submitSuccess" class="alert alert-success mt-3">-->
+<!--            Succesvol ingelogd!-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Login</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="username" class="form-label">Gebruikersnaam</label>
+              <input type="text" class="form-control" id="username" formControlName="username" required>
+              <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="text-danger">
+                Gebruikersnaam is verplicht.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Wachtwoord</label>
+              <input type="password" class="form-control" id="password" formControlName="password" required>
+              <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+                Wachtwoord is verplicht.
+              </div>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid || isSubmitting">
+                {{ isSubmitting ? 'Bezig met inloggen...' : 'Inloggen' }}
+              </button>
+            </div>
+          </form>
+          <div *ngIf="submitError" class="alert alert-danger mt-3">
+            {{ submitError }}
+          </div>
+          <div *ngIf="submitSuccess" class="alert alert-success mt-3">
+            Succesvol ingelogd!
+          </div>
+          <div *ngIf="authResponse" class="mt-3">
+            <h4>Inloggegevens:</h4>
+            <p>Gebruikersnaam: {{ authResponse.username }}</p>
+            <p>Verloopt op: {{ authResponse.expiresAt | date:'medium' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

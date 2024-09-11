@@ -1,0 +1,144 @@
+<!--<div class="container">-->
+<!--  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">-->
+<!--    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">-->
+<!--      <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>-->
+<!--    </a>-->
+
+<!--    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">-->
+<!--      <li><a routerLink="app-news" class="nav-link px-2 link-secondary">News</a></li>-->
+<!--      <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>-->
+<!--      <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>-->
+<!--      <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>-->
+<!--      <li><a href="#" class="nav-link px-2 link-dark">About</a></li>-->
+<!--    </ul>-->
+
+<!--    <div class="col-md-3 text-end">-->
+<!--      <a routerLink="/sign-up" class="btn btn-outline-primary me-2">Sign-up</a>-->
+<!--      <a routerLink="/login" class="btn btn-primary">Login</a>-->
+<!--    </div>-->
+<!--  </header>-->
+<!--</div>-->
+
+<div class="container">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+    </a>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a routerLink="app-news" class="nav-link px-2 link-secondary">News</a></li>
+      <li><a routerLink="posts" class="nav-link px-2 link-dark">Discussion Forum</a></li>
+      <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
+      <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
+      <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+    </ul>
+
+    <div class="col-md-3 text-end">
+      <ng-container *ngIf="isLoggedIn(); else loggedOut">
+        <button (click)="logout()" class="btn btn-outline-primary me-2">Logout</button>
+      </ng-container>
+      <ng-template #loggedOut>
+        <a routerLink="/sign-up" class="btn btn-outline-primary me-2">Sign-up</a>
+        <a routerLink="/login" class="btn btn-primary">Login</a>
+      </ng-template>
+    </div>
+  </header>
+</div>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--  <title>Your App Name</title>-->
+<!--  <style>-->
+<!--    body {-->
+<!--      font-family: Arial, sans-serif;-->
+<!--      margin: 0;-->
+<!--      padding: 0;-->
+<!--    }-->
+
+<!--    .header {-->
+<!--      background-color: #f8f8f8;-->
+<!--      padding: 10px 0;-->
+<!--      border-bottom: 1px solid #e7e7e7;-->
+<!--    }-->
+
+<!--    .container {-->
+<!--      max-width: 1200px;-->
+<!--      margin: 0 auto;-->
+<!--      padding: 0 15px;-->
+<!--    }-->
+
+<!--    .header-content {-->
+<!--      display: flex;-->
+<!--      justify-content: space-between;-->
+<!--      align-items: center;-->
+<!--    }-->
+
+<!--    .logo {-->
+<!--      font-size: 24px;-->
+<!--      font-weight: bold;-->
+<!--      color: #c62828;-->
+<!--      text-decoration: none;-->
+<!--    }-->
+
+<!--    .nav-menu {-->
+<!--      list-style-type: none;-->
+<!--      padding: 0;-->
+<!--      margin: 0;-->
+<!--      display: flex;-->
+<!--    }-->
+
+<!--    .nav-menu li {-->
+<!--      margin-left: 20px;-->
+<!--    }-->
+
+<!--    .nav-menu a {-->
+<!--      text-decoration: none;-->
+<!--      color: #333;-->
+<!--    }-->
+
+<!--    .auth-buttons {-->
+<!--      display: flex;-->
+<!--      gap: 10px;-->
+<!--    }-->
+
+<!--    .btn {-->
+<!--      padding: 8px 16px;-->
+<!--      border: none;-->
+<!--      border-radius: 4px;-->
+<!--      cursor: pointer;-->
+<!--    }-->
+
+<!--    .btn-primary {-->
+<!--      background-color: #1a73e8;-->
+<!--      color: white;-->
+<!--    }-->
+
+<!--    .btn-secondary {-->
+<!--      background-color: #f8f9fa;-->
+<!--      color: #1a73e8;-->
+<!--      border: 1px solid #dadce0;-->
+<!--    }-->
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<header class="header">-->
+<!--  <div class="container">-->
+<!--    <div class="header-content">-->
+<!--      <a href="/" class="logo">PERSPECTIEVEN</a>-->
+<!--      <nav>-->
+<!--        <ul class="nav-menu">-->
+<!--          <li><a routerLink="app-news" class="nav-link px-2 link-secondary">News</a></li>-->
+<!--          <li><a routerLink="posts" class="nav-link px-2 link-dark">Discussion Forum</a></li>-->
+<!--        </ul>-->
+<!--      </nav>-->
+<!--      <div class="auth-buttons">-->
+<!--        <a routerLink="/sign-up" class="btn btn-outline-primary me-2">Sign-up</a>-->
+<!--        <a routerLink="/login" class="btn btn-primary">Login</a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</header>-->

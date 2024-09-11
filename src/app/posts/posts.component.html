@@ -1,0 +1,46 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <!-- Main content area -->
+    <div class="col-md-8">
+      <!-- Posts list -->
+      <div *ngFor="let post of posts" class="card mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img [src]="post.url || '/api/placeholder/400/300'" alt="Post image" class="img-fluid post-image">
+            </div>
+            <div class="col-md-8">
+              <h5 class="card-title">{{ post.postName }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Posted by {{ post.userName }}</h6>
+              <p class="card-text">{{ post.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading spinner -->
+      <div class="text-center" *ngIf="isLoading">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+      <!-- Error message -->
+      <div class="alert alert-danger" *ngIf="error">
+        {{ error }}
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div *ngIf="isLoggedIn"  class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Home</h5>
+          <p class="card-text">Your personal Reddit frontpage, built for you.</p>
+          <a routerLink="/app-create-posts" class="btn btn-primary btn-block">Create Post</a>
+          <a routerLink="/app-create-category" class="btn btn-outline-primary btn-block mt-2">Create Category</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

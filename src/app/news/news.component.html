@@ -1,0 +1,107 @@
+<!--<div class="container mt-4">-->
+<!--  <h2>Laatste Nieuws</h2>-->
+
+<!--  <div class="mb-3">-->
+<!--    <input type="text" class="form-control" placeholder="Zoek nieuws..." [(ngModel)]="searchTerm" (input)="onSearch()">-->
+<!--  </div>-->
+
+<!--  <div class="text-center" *ngIf="isLoading">-->
+<!--    <div class="spinner-border" role="status">-->
+<!--      <span class="visually-hidden">Laden...</span>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="alert alert-danger" *ngIf="error">-->
+<!--    {{ error }}-->
+<!--  </div>-->
+
+<!--  <div class="row" *ngIf="!isLoading && !error">-->
+<!--    <div class="col-md-8">-->
+<!--      <div class="row">-->
+<!--        <div class="col-md-6 mb-4" *ngFor="let article of filteredArticles">-->
+<!--          <div class="card h-100">-->
+<!--            <img [src]="article.urlToImage" class="card-img-top" alt="{{ article.title }}" *ngIf="article.urlToImage">-->
+<!--            <div class="card-body d-flex flex-column">-->
+<!--              <h5 class="card-title">{{ article.title }}</h5>-->
+<!--              <p class="card-text flex-grow-1">{{ article.description }}</p>-->
+<!--              <a [href]="article.url" target="_blank" class="btn btn-primary mt-auto">Lees meer</a>-->
+<!--            </div>-->
+<!--            <div class="card-footer">-->
+<!--              <small class="text-muted">Gepubliceerd op: {{ article.publishedAt | date }}</small>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-md-4">-->
+<!--      <h3>Meest Populair</h3>-->
+<!--      <ul class="list-group">-->
+<!--        <li class="list-group-item" *ngFor="let popularArticle of popularArticles">-->
+<!--          <div class="d-flex">-->
+<!--            <img [src]="popularArticle.urlToImage" class="img-thumbnail me-3" style="width: 100px; height: 100px; object-fit: cover;" alt="{{ popularArticle.title }}" *ngIf="popularArticle.urlToImage">-->
+<!--            <div>-->
+<!--              <h6 class="mb-1">{{ popularArticle.title }}</h6>-->
+<!--              <small>{{ popularArticle.author }}</small>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<div class="container mt-4">
+  <h2>Laatste Nieuws</h2>
+
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Zoek artikelen..."
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+    >
+  </div>
+
+  <div class="text-center" *ngIf="isLoading">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Laden...</span>
+    </div>
+  </div>
+
+  <div class="alert alert-danger" *ngIf="error">
+    {{ error }}
+  </div>
+
+  <div class="row" *ngIf="!isLoading && !error">
+    <div class="col-md-8">
+      <div class="article-list">
+        <div class="article-item" *ngFor="let article of filteredArticles">
+          <div class="article-image">
+            <img [src]="article.urlToImage" [alt]="article.title" *ngIf="article.urlToImage">
+          </div>
+          <div class="article-content">
+<!--            <div class="article-category">{{ article.category | uppercase }}</div>-->
+            <h3 class="article-title">{{ article.title }}</h3>
+            <div class="article-author">BY {{ article.author | uppercase }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3>Meest Populair</h3>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let popularArticle of popularArticles">
+          <div class="d-flex">
+            <img [src]="popularArticle.urlToImage" class="img-thumbnail me-3" style="width: 100px; height: 100px; object-fit: cover;" alt="{{ popularArticle.title }}" *ngIf="popularArticle.urlToImage">
+            <div>
+              <h6 class="mb-1">{{ popularArticle.title }}</h6>
+              <small>{{ popularArticle.author }}</small>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

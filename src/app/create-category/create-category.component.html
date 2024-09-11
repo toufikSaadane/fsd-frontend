@@ -1,0 +1,27 @@
+
+<!--<form (ngSubmit)="onSubmit()">-->
+<!--  <div>-->
+<!--    <label for="name">Category Name:</label>-->
+<!--    <input type="text" id="name" [(ngModel)]="categoryRequestModel.name" name="name" required>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <label for="description">Description:</label>-->
+<!--    <textarea id="description" [(ngModel)]="categoryRequestModel.description" name="description" required></textarea>-->
+<!--  </div>-->
+<!--  <button type="submit">Create Category</button>-->
+<!--</form>-->
+
+<div class="category-form-container">
+  <h2>Create New Category</h2>
+  <form (ngSubmit)="onSubmit()" class="category-form">
+    <div class="form-group">
+      <label for="name">Category Name:</label>
+      <input type="text" id="name" [(ngModel)]="categoryDto.name" name="name" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="categoryDto.description" name="description" required class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Category</button>
+  </form>
+</div>

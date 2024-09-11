@@ -1,0 +1,47 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Sign Up</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" formControlName="email" required>
+              <div *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched" class="text-danger">
+                Voer een geldig e-mailadres in.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="username" class="form-label">Gebruikersnaam</label>
+              <input type="text" class="form-control" id="username" formControlName="username" required>
+              <div *ngIf="signUpForm.get('username')?.invalid && signUpForm.get('username')?.touched" class="text-danger">
+                Gebruikersnaam moet minimaal 3 tekens lang zijn.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Wachtwoord</label>
+              <input type="password" class="form-control" id="password" formControlName="password" required>
+              <div *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched" class="text-danger">
+                Wachtwoord moet minimaal 8 tekens lang zijn.
+              </div>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary" [disabled]="signUpForm.invalid || isSubmitting">
+                {{ isSubmitting ? 'Bezig met registreren...' : 'Registreren' }}
+              </button>
+            </div>
+          </form>
+          <div *ngIf="submitError" class="alert alert-danger mt-3">
+            {{ submitError }}
+          </div>
+          <div *ngIf="submitSuccess" class="alert alert-success mt-3">
+            Registratie succesvol! Je kunt nu inloggen.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
