@@ -5,7 +5,7 @@ import {LoginComponent} from "./auth/login/login.component";
 import {NewsComponent} from "./news/news.component";
 import {PostsComponent} from "./posts/posts.component";
 import {CategoryComponent} from "./category/category.component";
-import {CreatePostsComponent} from "./create-posts/create-posts.component";
+import {CreatePostComponent} from "./create-posts/create-post.component";
 import {CreateCategoryComponent} from "./create-category/create-category.component";
 
 const routes: Routes = [
@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'app-news', component: NewsComponent},
   {path : 'posts', component : PostsComponent},
-  {path: 'app-create-posts', component: CreatePostsComponent},
+  {path: 'app-create-posts', component: CreatePostComponent},
   {path: 'app-create-category', component: CreateCategoryComponent},
   {path: 'app-category', component: CategoryComponent },
 ];

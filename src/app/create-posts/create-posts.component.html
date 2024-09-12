@@ -1,1 +1,52 @@
-<p>create-posts works!</p>
+<!--<div class="post-form-container">-->
+<!--  <h2>Create New Post</h2>-->
+<!--  <form (ngSubmit)="onSubmit()">-->
+<!--    <div class="form-group">-->
+<!--      <label for="categoryName">Category Name:</label>-->
+<!--      <select id="categoryName" name="categoryName" [(ngModel)]="post.categoryName" required>-->
+<!--        <option value="">Select a category</option>-->
+<!--        <option *ngFor="let category of categories" [value]="category">{{category}}</option>-->
+<!--      </select>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="postName">Post Name:</label>-->
+<!--      <input type="text" id="postName" name="postName" [(ngModel)]="post.postName" required>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="url">URL:</label>-->
+<!--      <input type="text" id="url" name="url" [(ngModel)]="post.url">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="description">Description:</label>-->
+<!--      <textarea id="description" name="description" [(ngModel)]="post.description"></textarea>-->
+<!--    </div>-->
+<!--    <button type="submit">Create Post</button>-->
+<!--  </form>-->
+<!--</div>-->
+
+
+<div class="category-form-container">
+  <h2>Create New Post</h2>
+  <form (ngSubmit)="onSubmit()" class="category-form">
+    <div class="form-group">
+      <label for="categoryName">Category Name:</label>
+      <select id="categoryName" name="categoryName" [(ngModel)]="post.categoryName" required class="form-control">
+        <option value="">Select a category</option>
+        <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="postName">Post Name:</label>
+      <input type="text" id="postName" name="postName" [(ngModel)]="post.postName" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="url">URL:</label>
+      <input type="text" id="url" name="url" [(ngModel)]="post.url" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="post.description" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Post</button>
+  </form>
+</div>

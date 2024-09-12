@@ -6,20 +6,26 @@ import {Router} from "@angular/router";
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
+export class HeaderComponent {
+  constructor(private router: Router) {}
 
   isLoggedIn(): boolean {
     return !!localStorage.getItem('authToken');
   }
 
-  logout(): void {
+  navigateToDiscussionForum() {
+    if (this.isLoggedIn()) {
+      this.router.navigate(['/posts']);
+    } else {
+      this.router.navigate(['/login']);
+    }
+  }
+
+  logout() {
     localStorage.removeItem('authToken');
     localStorage.removeItem('refreshToken');
-    this.router.navigate(['/app-news']);
+    localStorage.removeItem('expiresAt');
+    this.router.navigate(['/login']);
   }
 }

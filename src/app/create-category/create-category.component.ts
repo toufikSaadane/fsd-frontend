@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CategoryRequestModel} from "../model/category-request.model";
 import {CreateCategoryService} from "./create.service";
-import {CreateService} from "../create-posts/create.service";
 import {Router} from "@angular/router";
 
 @Component({

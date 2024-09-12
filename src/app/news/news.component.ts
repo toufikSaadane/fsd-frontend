@@ -108,6 +108,7 @@ export class NewsComponent implements OnInit {
       this.filteredArticles = this.articles;
     } else {
       this.filteredArticles = this.articles.filter(article =>
+        (article.url?.toLowerCase().includes(this.searchTerm.toLowerCase()) ?? false) ||
         (article.title?.toLowerCase().includes(this.searchTerm.toLowerCase()) ?? false) ||
         (article.description?.toLowerCase().includes(this.searchTerm.toLowerCase()) ?? false)
       );
