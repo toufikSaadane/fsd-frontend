@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {SignupRequestModel} from "../../model/signupRequest.model";
 import {SignUpService} from "./signup.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -16,7 +17,7 @@ export class SignUpComponent implements OnInit {
   submitError: string | null = null;
   submitSuccess = false;
 
-  constructor(private signUpService: SignUpService) {
+  constructor(private signUpService: SignUpService, private router: Router) {
     this.signupRequest = {
       email: '',
       username: '',
@@ -47,6 +48,6 @@ export class SignUpComponent implements OnInit {
     this.signUpService.singUp(this.signupRequest).subscribe(data => {
       console.log(data);
     });
-
+    this.router.navigate(['/login']);
   }
 }

@@ -4,7 +4,8 @@ import { NewsResponse } from "../model/news-response.model";
 import { Article } from "../model/article.model";
 
 @Component({
-  selector: 'app-news',
+  // selector: 'app-news',
+  selector: '',
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.css']
 })

@@ -11,7 +11,7 @@ import {CreateCategoryComponent} from "./create-category/create-category.compone
 const routes: Routes = [
   {path: 'sign-up', component: SignUpComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'app-news', component: NewsComponent},
+  {path: '', component: NewsComponent},
   {path : 'posts', component : PostsComponent},
   {path: 'app-create-posts', component: CreatePostComponent},
   {path: 'app-create-category', component: CreateCategoryComponent},

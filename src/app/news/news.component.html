@@ -71,7 +71,12 @@
       (input)="onSearch()"
     >
   </div>
-
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <div class="text-center" *ngIf="isLoading">
     <div class="spinner-border" role="status">
       <span class="visually-hidden">Laden...</span>
@@ -98,7 +103,8 @@
             <div class="article-description">{{ article.description }}</div>
             <div class="article-content">{{ article.content }}</div>
             <br>
-            <div class="article-published" style="color: cadetblue;">Published at: {{ article.publishedAt | date }}</div>
+            <div class="article-published" style="color: cadetblue;">Published at: {{ article.publishedAt | date }}
+            </div>
             <br>
             <br>
           </div>
@@ -110,7 +116,9 @@
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let popularArticle of popularArticles">
           <div class="d-flex">
-            <img [src]="popularArticle.urlToImage" class="img-thumbnail me-3" style="width: 100px; height: 100px; object-fit: cover;" alt="{{ popularArticle.title }}" *ngIf="popularArticle.urlToImage">
+            <img [src]="popularArticle.urlToImage" class="img-thumbnail me-3"
+                 style="width: 100px; height: 100px; object-fit: cover;" alt="{{ popularArticle.title }}"
+                 *ngIf="popularArticle.urlToImage">
             <div>
               <a [href]="popularArticle.url" target="_blank">{{ popularArticle.title }}</a>
               <br>
