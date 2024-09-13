@@ -13,6 +13,7 @@ import { PostsComponent } from './posts/posts.component';
 import {CreatePostComponent} from './create-posts/create-post.component';
 import { CreateCategoryComponent } from './create-category/create-category.component';
 import { CategoryComponent } from './category/category.component';
+import { LogoutComponent } from './auth/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CategoryComponent } from './category/category.component';
     CreateCategoryComponent,
     CategoryComponent,
     CreateCategoryComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

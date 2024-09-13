@@ -24,7 +24,9 @@ export class PostsComponent implements OnInit {
     this.isLoading = true;
     this.error = null;
     this.postsService.getPosts().subscribe(
+
       (data) => {
+        console.log('Posts:', data);
         this.posts = data;
         this.isLoading = false;
       },
